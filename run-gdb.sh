@@ -114,8 +114,8 @@ if [ "$1" != "core" ] ; then
 fi
 
 if [ "$1" = "attach" ]; then
-   if [ -z "$B2G_PID" ]; then
-      echo Error: No PID to attach to. B2G not running?
+   if [ "$#" == "1"  ]; then
+      echo Error: No PID is specified. \(./run-gdb.sh attach PID\)
       exit 1
    fi
 
